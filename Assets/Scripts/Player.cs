@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 5.0f;
     
-    private Rigidbody _rb;
+    private Rigidbody? _rb;
 
     private void Start()
     {
