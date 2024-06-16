@@ -16,7 +16,10 @@ public class Player : MonoBehaviour
     {
         var hInput = Input.GetAxis("Horizontal");
         var vInput = Input.GetAxis("Vertical");
-        var movement = new Vector3(hInput, 0.0f, vInput).normalized * movementSpeed;
-        _rb.MovePosition(_rb.position + movement * Time.fixedDeltaTime);
+
+        _rb.velocity =  new Vector3(hInput, 0, vInput).normalized * movementSpeed;
+        
+        // prevent rotation e.g. due to friction
+        _rb.rotation = Quaternion.identity;
     }
 }
